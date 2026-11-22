@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <img class="logo" src="icons/icon-48.png" width="28" height="28" alt="">
+    <div class="brand">
+      <b data-i18n="name"></b>
+      <span id="version"></span>
+    </div>
+    <button id="open" class="icon" data-i18n-title="popup_open">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+    </button>
+    <button id="options" class="icon" data-i18n-title="popup_options">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </button>
+  </header>
+
+  <section class="card capture">
+    <div id="status" class="status" role="status">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="status-text"></span>
+    </div>
+    <label class="toggle">
+      <span class="toggle-text">
+        <b data-i18n="popup_capture"></b>
+        <small data-i18n="popup_take"></small>
+      </span>
+      <input id="take" type="checkbox" role="switch">
+    </label>
+    <a id="fix" class="fix" hidden data-i18n="popup_fix" target="_blank" rel="noopener"></a>
+  </section>
+
+  <p id="declined" class="declined" hidden><span id="declined-what"></span><span id="declined-why"></span></p>
+
+  <section id="media" class="media" hidden>
+    <div class="section-head">
+      <h2 data-i18n="popup_media"></h2>
+    </div>
+    <ul id="media-list"></ul>
+    <p id="media-none" class="empty" data-i18n="popup_media_none" hidden></p>
+    <p id="media-said" class="said" role="status" hidden></p>
+    <label class="toggle small">
+      <span class="toggle-text"><small data-i18n="popup_media_title_name"></small></span>
+      <input id="media-title-name" type="checkbox" role="switch">
+    </label>
+  </section>
+
+  <button id="exclude" class="site" hidden></button>
+  <p id="excluded" class="said" hidden></p>
+
+  <details class="more">
+    <summary><span data-i18n="popup_more"></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <label class="toggle small" id="proxy-row" hidden>
+      <span class="toggle-text"><small data-i18n="popup_proxy"></small></span>
+      <input id="proxy" type="checkbox" role="switch">
+    </label>
+    <section id="send" class="send">
+      <h2 data-i18n="popup_send_to"></h2>
+      <div class="segmented" role="radiogroup">
+        <label><input type="radio" name="to" id="to-here"><span data-i18n="popup_send_here"></span></label>
+        <label><input type="radio" name="to" id="to-remote"><span data-i18n="popup_send_remote_short"></span></label>
+      </div>
+      <div id="remote-form" hidden>
+        <input id="remote-url" type="url" dir="ltr" placeholder="https://192.168.1.10:8463/" aria-labelledby="to-remote">
+        <input id="remote-code" inputmode="numeric" maxlength="9" dir="ltr" data-i18n-placeholder="popup_remote_code">
+        <div class="pair">
+          <button id="remote-open" data-i18n="popup_remote_open"></button>
+          <button id="remote-pair" class="primary" data-i18n="popup_remote_pair"></button>
+        </div>
+        <p class="hint" data-i18n="popup_remote_help"></p>
+        <p id="remote-said" class="said bad" role="status" hidden></p>
+      </div>
+    </section>
+  </details>
+
+  <footer>
+    <span class="hint" data-i18n="popup_alt"></span>
+    <a id="help" class="help" data-i18n="popup_help" target="_blank" rel="noopener"></a>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>

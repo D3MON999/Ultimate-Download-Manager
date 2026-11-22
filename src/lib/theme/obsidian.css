@@ -1,0 +1,141 @@
+/* Obsidian: black and white, colour only where it matters: green and red. */
+:root {
+  --bg: #000;
+  --card: #0b0b0b;
+  --card-hover: #111;
+  --line: #1c1c1c;
+  --line2: #2a2a2a;
+  --line3: #3a3a3a;
+  --text: #f2f2f2;
+  --text-2: #cfcfcf;
+  --muted: #8a8a8a;      /* 6.0:1 on #000: fine for secondary text */
+  --faint: #555;         /* 2.9:1: decorative only, never for text people must read */
+  --up: #2ebd85;         /* active, done, healthy */
+  --up-soft: rgba(46, 189, 133, 0.14);
+  --down: #f6465d;       /* failed, stopped, errors */
+  --down-soft: rgba(246, 70, 93, 0.14);
+  --hero: #fff;
+  --hero-text: #000;
+  --focus: #fff;
+  --field: #000;         /* inputs */
+  --sel: #171717;        /* the selected row */
+  --bar: var(--up);      /* progress fills, the speed line */
+  --bar-soft: var(--up-soft);
+  --sel-edge: transparent; /* the selected row's inner edge (Dock: amber) */
+  color-scheme: dark;
+
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --head: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --mono: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+
+  --r-sm: 8px;
+  --r-card: 14px;
+  --r-tile: 16px;
+  --r-pill: 999px;
+
+  /* Dense desktop spacing. */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+
+  --t-fast: 150ms;
+  --t-base: 220ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Light: the same layout, ink on paper. Green and red stay the only colours. */
+:root[data-theme="light"] {
+  --bg: #f6f6f7;
+  --card: #ffffff;
+  --card-hover: #f0f0f2;
+  --line: #e4e4e7;
+  --line2: #d4d4d8;
+  --line3: #a1a1aa;
+  --text: #111113;
+  --text-2: #3f3f46;
+  --muted: #6b6b74;
+  --faint: #a1a1aa;
+  --up: #128a5c;
+  --up-soft: rgba(18, 138, 92, 0.12);
+  --down: #d12c43;
+  --down-soft: rgba(209, 44, 67, 0.1);
+  --hero: #111113;
+  --hero-text: #ffffff;
+  --focus: #111113;
+  --field: #ffffff;
+  --sel: #e9e9ec;
+  color-scheme: light;
+}
+
+/* Dock: a receiving dock at night. Graphite, off-white text, one amber lamp for what is
+   arriving (progress, the selection, the speed line). Geist for words, Geist Mono for figures. */
+:root[data-theme="dock"] {
+  --bg: #141415;
+  --card: #19191b;
+  --card-hover: #1f1f21;
+  --line: rgba(237, 237, 237, 0.08);
+  --line2: rgba(237, 237, 237, 0.12);
+  --line3: rgba(237, 237, 237, 0.2);
+  --text: #ededed;
+  --text-2: #a1a1a6;
+  --muted: #85858b;
+  --faint: #55555a;
+  --up: #4cc38a;
+  --up-soft: rgba(76, 195, 138, 0.14);
+  --down: #e5484d;
+  --down-soft: rgba(229, 72, 77, 0.12);
+  --hero: #ededed;
+  --hero-text: #141415;
+  --focus: #ededed;
+  --field: #0f0f10;
+  --sel: #232325;
+  --bar: #f0a63c;
+  --bar-soft: rgba(240, 166, 60, 0.14);
+  --sel-edge: #f0a63c;
+  --lamp: #f0a63c;
+  --deep: #0f0f10;
+  color-scheme: dark;
+
+  --font: "Geist Variable", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --head: "Geist Variable", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --mono: "Geist Mono Variable", "Cascadia Mono", "Consolas", ui-monospace, monospace;
+
+  --r-card: 12px;
+  --r-tile: 12px;
+}
+:root[data-theme="dock"] body { font-feature-settings: "tnum" 1; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+button { font: inherit; color: inherit; cursor: pointer; }
+input { font: inherit; color: inherit; user-select: text; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection { background: var(--text); color: var(--bg); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line2); border-radius: 10px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--line3); }
+::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}

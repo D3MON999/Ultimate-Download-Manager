@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Ultimate Download Manager browser extension help</title>
+<style>
+  :root { --bg:#000; --card:#0b0b0b; --line:#1c1c1c; --line2:#2a2a2a; --text:#f2f2f2; --muted:#8a8a8a; --up:#2ebd85; --down:#f6465d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  main { width: min(760px, 100% - 32px); margin: 40px auto 80px; }
+  h1 { font: 300 40px/1.1 "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; letter-spacing: -0.03em; margin: 0 0 8px; }
+  h1 b { font-weight: 650; }
+  .lead { color: var(--muted); margin: 0 0 28px; }
+  section { border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 18px 20px; margin: 0 0 14px; scroll-margin-top: 20px; }
+  section:target { border-color: var(--text); }
+  h2 { font: 600 18px "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; margin: 0 0 6px; }
+  p, li { color: #cfcfcf; }
+  p { margin: 6px 0; }
+  ol { margin: 6px 0; padding-left: 20px; }
+  code { font: 13px "Cascadia Mono", Consolas, monospace; background: #000; border: 1px solid var(--line2); border-radius: 6px; padding: 1px 6px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icons/icon-128.png" width="56" height="56" alt="" style="border-radius:14px;margin-bottom:14px">
+  <h1>Ultimate Download Manager <b>help</b></h1>
+  <p class="lead">When a download stays in the browser instead of going to Ultimate Download Manager, the toolbar button says why. Each reason below has its fix.</p>
+
+  <section id="not-installed">
+    <h2>Ultimate Download Manager isn't installed, or its browser connection isn't set up</h2>
+    <ol>
+      <li>Install Ultimate Download Manager, or reinstall it. Then start it once.</li>
+      <li>On its first start, Ultimate Download Manager registers its connection to Chrome, Edge, Brave, Opera, Vivaldi and Firefox.</li>
+      <li>Restart the browser.</li>
+    </ol>
+  </section>
+
+  <section id="not-running">
+    <h2>Ultimate Download Manager didn't start in time</h2>
+    <p>The browser starts Ultimate Download Manager when it's closed. A first start or an antivirus scan can make that slow. Open Ultimate Download Manager yourself, then try the download again.</p>
+  </section>
+
+  <section id="host-failed">
+    <h2>The connection to Ultimate Download Manager failed</h2>
+    <p>Restart Ultimate Download Manager and the browser. If it keeps failing, reinstall Ultimate Download Manager: the installer sets the connection up again.</p>
+  </section>
+
+  <section id="too-large">
+    <h2>The download's details are too large</h2>
+    <p>Usually that means very large cookies or a large form. Right-click the link and choose <b>Download with Ultimate Download Manager</b>, or copy the link into Ultimate Download Manager with Ctrl+N.</p>
+  </section>
+
+  <section id="update-app">
+    <h2>Ultimate Download Manager is older than this extension</h2>
+    <p>Install the latest Ultimate Download Manager to use everything the extension offers.</p>
+  </section>
+
+  <section id="refused">
+    <h2>Ultimate Download Manager can't take this address</h2>
+    <p>Ultimate Download Manager takes web (http, https) and FTP addresses. Video pages go through the video button, and torrents through magnet links and .torrent files.</p>
+  </section>
+
+  <section id="options">
+    <h2>Left to the browser by Ultimate Download Manager's settings</h2>
+    <p>Its file type isn't on Ultimate Download Manager's list, its site is excluded, or it's smaller than the minimum size. Hold <b>Alt</b> while clicking a link to keep a download in the browser on purpose.</p>
+  </section>
+
+  <section id="store-youtube">
+    <h2>YouTube and the store's copy of the extension</h2>
+    <p>Browser stores don't allow extensions that download from YouTube. This copy of the extension is installed straight from Ultimate Download Manager, so the video button works there.</p>
+  </section>
+
+  <section id="drm">
+    <h2>Protected video</h2>
+    <p>Netflix, Prime Video, Disney+, Spotify and similar services lock their streams with DRM. Ultimate Download Manager doesn't save those. Use the service's own app for offline viewing.</p>
+  </section>
+</main>
+</body>
+</html>

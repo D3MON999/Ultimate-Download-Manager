@@ -1,0 +1,1 @@
+﻿Ultimate Download Manager browser-extension signing key. extension-private.pem must stay private (never commit, never share). extension-public.b64 goes in the extension manifest 'key' and fixes the unpacked extension ID (aibefkiihnkbikflodbfliepfffdkfnk).
